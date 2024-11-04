@@ -144,3 +144,15 @@
         transform: perspective(400px);
     }
 }
+
+.App {
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: green;
+}
