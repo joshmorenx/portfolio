@@ -1,11 +1,11 @@
 import Typewriter from 'typewriter-effect';
-import { useMediaQuery } from "@mui/material"
-import { Box, Button } from "@mui/material"
+// import { useMediaQuery } from "@mui/material"
+import { Box/*, Button*/ } from "@mui/material"
 
 export default function Content(): JSX.Element {
-    const isDesktop = useMediaQuery('(min-width: 900px)');
-    const isTablet = useMediaQuery('(min-width: 426px) and (max-width: 899px)');
-    const isMobile = useMediaQuery('(max-width: 425px)');
+    // const isDesktop = useMediaQuery('(min-width: 900px)');
+    // const isTablet = useMediaQuery('(min-width: 426px) and (max-width: 899px)');
+    // const isMobile = useMediaQuery('(max-width: 425px)');
 
     return (
         <Box style={{ padding: '2rem' }} className="content">
