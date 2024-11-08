@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm test tests
+        run: npm run test
 
       - name: Build application with Vite
         run: npm run build
