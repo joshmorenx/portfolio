@@ -19,7 +19,7 @@ export default function Content(): JSX.Element {
 
     return (
         <Box style={{ padding: '2rem' }} className="content">
-            <h1 className="fadeInLeft">Hi, I'm <span>Joshua Aranda</span></h1>
+            <h1 className="fadeInLeft" style={{ color: 'black' }}>Hi, I'm <span>Joshua Aranda</span></h1>
             <p style={startStyle} className="fadeInLeft">I'm a
                 <Typewriter
                     options={{
