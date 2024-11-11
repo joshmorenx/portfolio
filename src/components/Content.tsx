@@ -7,19 +7,30 @@ export default function Content(): JSX.Element {
     // const isTablet = useMediaQuery('(min-width: 426px) and (max-width: 899px)');
     // const isMobile = useMediaQuery('(max-width: 425px)');
 
+    const startStyle: React.CSSProperties = {
+        color: 'white',
+        fontSize: '1.5rem',
+        fontWeight: 'bold',
+        marginTop: '0',
+        marginBottom: '0',
+        display: 'inline-flex',
+        gap: '0.5rem'
+    }
+
     return (
         <Box style={{ padding: '2rem' }} className="content">
-            <h1 className="heading">Hi, I'm <span className="name">Joshua Aranda</span></h1>
-            <p style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold', marginTop: '0', marginBottom: '0', display: 'inline-flex', gap: '0.5rem' }} className="subHeading">I'm a
+            <h1 className="fadeInLeft">Hi, I'm <span>Joshua Aranda</span></h1>
+            <p style={startStyle} className="fadeInLeft">I'm a
                 <Typewriter
                     options={{
                         loop: true,
                         autoStart: true,
-                        delay: 10,
+                        delay: 50,
                         deleteSpeed: 1
                     }}
                     onInit={(typewriter) => {
                         typewriter
+                            .deleteAll()
                             .typeString("<span style='background-color: #00FF00; border-radius: 5px; padding: 5px; color: black;'>Full-Stack Developer</span>")
                             .pauseFor(1000)
                             .deleteAll()
