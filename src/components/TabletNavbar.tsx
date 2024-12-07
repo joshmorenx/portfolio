@@ -42,7 +42,7 @@ export default function TabletNavbar({ navbarStyleTablet }: TabletNavbarProps): 
 
     return (
         <>
-        <Button sx={{ color: 'white', position: 'fixed', top: '0', left: '0'}} onClick={()=>closeOpenDrawer('openDrawer')}><MenuIcon /></Button>
+        <Button sx={{ color: 'white', position: 'fixed', top: '0', left: '0', zIndex: '1'}} onClick={()=>closeOpenDrawer('openDrawer')}><MenuIcon /></Button>
             <Stack className={classAttribute} direction="column" sx={!isDrawerOpen ? hiddenLeftDrawerStyle : navbarStyleTablet}>
                 <Button sx={{ color: 'white', width: '10%' }} onClick={()=>closeOpenDrawer('closeDrawer')}><CloseIcon /></Button>
                 <Button sx={{ color: 'white' }}>Home</Button>
