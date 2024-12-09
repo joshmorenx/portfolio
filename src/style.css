@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(37, 37, 37);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .fadeInLeft {
@@ -202,7 +202,7 @@ body {
 }
 
 .content {
-    position: absolute;
+    position: fixed;
     display: flex;
     color: white;
     background-color: black;
@@ -220,7 +220,7 @@ body {
 }
 
 .content-mobile {
-    position: absolute;
+    position: fixed;
     display: block;
     color: white;
     background-color: black;
