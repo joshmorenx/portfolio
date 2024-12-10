@@ -11,7 +11,7 @@ export default function Content(): JSX.Element {
     return (
         <Box sx={{ display: 'block', alignItems: 'center' }}>
             <Box className={isDesktop ? "content" : isTablet ? "content-tablet" : "content-mobile"}>
-                <Box className={(isDesktop ? "sliced" : isTablet ? "sliced-tablet" : "sliced-mobile") + " txtjustify"}>
+                <Box className={(isDesktop ? "sliced txtjustify" : isTablet ? "sliced-tablet" : "sliced-mobile")}>
                     <h1 className={"fadeInLeft " + (isDesktop ? "cocoon" : "")} style={{ color: 'white', fontSize: isDesktop ? '2.5vw' : isTablet ? '4.5vw' : '5.5vw' }}><span>Hi, I'm Joshua Aranda</span></h1>
                     <h6 className={"fadeInLeft " + (isDesktop ? "start-style cocoon" : isTablet ? " start-style-tablet" : " start-style-mobile")}>I'm a
                         <Typewriter
