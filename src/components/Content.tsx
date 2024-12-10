@@ -11,9 +11,9 @@ export default function Content(): JSX.Element {
     return (
         <Box sx={{ display: 'block', alignItems: 'center' }}>
             <Box className={isDesktop ? "content" : isTablet ? "content-tablet" : "content-mobile"}>
-                <Box className={isDesktop ? "sliced" : isTablet ? "sliced-tablet" : "sliced-mobile"}>
-                    <h1 className={"fadeInLeft"} style={{ color: 'white' }}>Hi, I'm <span>Joshua Aranda</span></h1>
-                    <h6 className={"fadeInLeft" + (isDesktop ? " start-style" : isTablet ? " start-style-tablet" : " start-style-mobile")}>I'm a
+                <Box className={(isDesktop ? "sliced" : isTablet ? "sliced-tablet" : "sliced-mobile") + " txtjustify"}>
+                    <h1 className={"fadeInLeft " + (isDesktop ? "cocoon" : "")} style={{ color: 'white', fontSize: isDesktop ? '2.5vw' : isTablet ? '4.5vw' : '5.5vw' }}><span>Hi, I'm Joshua Aranda</span></h1>
+                    <h6 className={"fadeInLeft " + (isDesktop ? "start-style cocoon" : isTablet ? " start-style-tablet" : " start-style-mobile")}>I'm a
                         <Typewriter
                             options={{
                                 loop: true,
@@ -42,8 +42,8 @@ export default function Content(): JSX.Element {
                     </h6>
                 </Box>
                 <Box className={isDesktop ? "sliced" : isTablet ? "sliced-tablet" : "sliced-mobile"}>
-                    <Box className={"fadeInRight"}>
-                        <img className={isDesktop ? "dev-profile" : isTablet ? "dev-profile-tablet" : "dev-profile-mobile"} src={devImg} alt="" />
+                    <Box>
+                        <img className={(isDesktop ? "dev-profile" : isTablet ? "dev-profile-tablet" : "dev-profile-mobile") + " fadeInRight"} src={devImg} alt="" />
                     </Box>
                 </Box>
             </Box>
