@@ -1,6 +1,6 @@
 import { useMediaQuery } from "@mui/material"
 import DesktopNavbar from './DesktopNavbar'
-import TabletNavbar from './TabletNavbar'
+import MobileNavbar from './MobileNavbar'
 
 export default function Navbar(): JSX.Element {
     const isDesktop = useMediaQuery('(min-width: 900px)');
@@ -34,7 +34,7 @@ export default function Navbar(): JSX.Element {
     return (
         <>
             {isDesktop && <DesktopNavbar navbarStyleDesktop={navbarStyleDesktop} />}
-            {(isTablet || isMobile) && <TabletNavbar navbarStyleTablet={navbarStyleTablet} />}
+            {(isTablet || isMobile) && <MobileNavbar navbarStyleTablet={navbarStyleTablet} />}
         </>
     )
 }
