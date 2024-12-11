@@ -11,7 +11,7 @@ export default function Project({ isDesktop, isTablet }: ProjectProps): JSX.Elem
             <Box sx={{ color: 'white', fontSize: isDesktop ? '2.5vw' : isTablet ? '4.5vw' : '5.5vw', width: '100%', textAlign: 'center' }}><h1>Projects</h1></Box>
             <Box className={"projects center-child"}>
                 <Box className={"projects-view"}>
-                    <Carousel slide={false}>
+                    <Carousel slide={true} data-carousel="slide">
                         <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
                         <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
                         <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
