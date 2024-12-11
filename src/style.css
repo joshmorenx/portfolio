@@ -6,9 +6,9 @@ html {
     height: 100%;
 }
 
-*{
+/* *{
     border: 1px solid white!important;
-}
+} */
 
 @keyframes fadeInLeft {
     from {
