@@ -10,7 +10,7 @@ export default function Content(): JSX.Element {
     return (
         <Box sx={{ display: 'block', alignItems: 'center' }}>
             <DevInfo isDesktop={isDesktop} isTablet={isTablet} />
-            <Projects />
+            <Projects isDesktop={isDesktop} isTablet={isTablet} />
         </Box>
     );
 }
