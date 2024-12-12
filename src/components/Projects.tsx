@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import { useState, useRef, TouchEvent } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import asset from '../assets/376301017-7b50f845-33ee-41c8-85d2-c9d33e5403f9.png'
 
 interface ProjectProps {
     isDesktop: boolean;
@@ -13,8 +14,7 @@ export default function Project({ isDesktop, isTablet }: ProjectProps): JSX.Elem
     const touchEndX = useRef<number>(0);
 
     const images = [
-        { source: "https://private-user-images.githubusercontent.com/37154328/376300123-105a5a2c-2197-465e-8a2f-c643c793ed67.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzM5Nzk0NjAsIm5iZiI6MTczMzk3OTE2MCwicGF0aCI6Ii8zNzE1NDMyOC8zNzYzMDAxMjMtMTA1YTVhMmMtMjE5Ny00NjVlLThhMmYtYzY0M2M3OTNlZDY3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEyMTIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMjEyVDA0NTI0MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQ2NTZiYTg4YTYxNWU0MGRlNGMyMmIzMDM0NjEzZWQzOTJiNGQ3OWQyZTJiNmE1MzhhMmY3YWVhMzkwNGQ2NzMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.iIIWzAeSFiPxYnTbla6aIr8UBMrGVvOBEab8OFAYlmc", description: "NodeNetwork (Open Source Project)", repository: "https://github.com/joshmorenx/NodeNetwork" },
-        { source: "https://flowbite.com/docs/images/carousel/carousel-1.svg", description: "description 1", repository: "https://github.com/flowbite/flowbite" },
+        { source: asset, description: "description 1", repository: "https://github.com/joshmorenx/nodeNetwork" },
         { source: "https://flowbite.com/docs/images/carousel/carousel-2.svg", description: "description 2", repository: "https://github.com/flowbite/flowbite" },
         { source: "https://flowbite.com/docs/images/carousel/carousel-3.svg", description: "description 3", repository: "https://github.com/flowbite/flowbite" },
         { source: "https://flowbite.com/docs/images/carousel/carousel-4.svg", description: "description 4", repository: "https://github.com/flowbite/flowbite" },
