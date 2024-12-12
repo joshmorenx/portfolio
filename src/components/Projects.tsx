@@ -14,7 +14,7 @@ export default function Project({ isDesktop, isTablet }: ProjectProps): JSX.Elem
     const touchEndX = useRef<number>(0);
 
     const images = [
-        { source: asset, description: "description 1", repository: "https://github.com/joshmorenx/nodeNetwork" },
+        { source: asset, description: "nodeNetwork: an open-source social media platform", repository: "https://github.com/joshmorenx/nodeNetwork" },
         { source: "https://flowbite.com/docs/images/carousel/carousel-2.svg", description: "description 2", repository: "https://github.com/flowbite/flowbite" },
         { source: "https://flowbite.com/docs/images/carousel/carousel-3.svg", description: "description 3", repository: "https://github.com/flowbite/flowbite" },
         { source: "https://flowbite.com/docs/images/carousel/carousel-4.svg", description: "description 4", repository: "https://github.com/flowbite/flowbite" },
