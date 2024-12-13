@@ -157,7 +157,7 @@ html {
 .dev-info {
     display: flex;
     color: white;
-    background: linear-gradient(to bottom, #4facfe, #235aa6);
+    background: linear-gradient(to bottom, #2a3b4d, #1c2d45);
     width: 100%;
     height: 100vh;
 }
@@ -166,7 +166,7 @@ html {
     display: flex;
     flex-direction: column;
     color: white;
-    background: linear-gradient(to bottom, #4facfe, #235aa6);
+    background: linear-gradient(to bottom, #2a3b4d, #1c2d45);
     width: 100%;
     height: 100vh;
 }
@@ -175,7 +175,7 @@ html {
     display: flex;
     flex-direction: column;
     color: white;
-    background: linear-gradient(to bottom, #4facfe, #235aa6);
+    background: linear-gradient(to bottom, #2a3b4d, #1c2d45);
     width: 100%;
     height: 100vh;
 }
@@ -269,7 +269,7 @@ html {
     color: white;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom, #235aa6, #3f2b96);
+    background: linear-gradient(to bottom, #1c2d45, #2b1f3c);
 }
 
 .projects-view {
@@ -287,5 +287,24 @@ html {
 .center-child {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.resume {
+    color: white;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #2b1f3c, #1c2d45);
+}
+
+.resume-roadmap-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    align-content: center;
     justify-content: center;
 }
