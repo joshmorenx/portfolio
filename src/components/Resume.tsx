@@ -16,16 +16,14 @@ export default function Resume({ isDesktop, isTablet }: ResumeProps): JSX.Elemen
     //     { title: "title 4", description: "description 4", date: "date 4" },
     // ]
 
-    // const skills = [
-    //     { programmingLangs: ["VB.NET", "TypeScript", "JavaScript", "Python"] },
-    //     { frontend: ["React", "React Native", "TailwindCSS", "Context API", "Redux", "Redux Persist"] },
-    //     { backend: ["Node.js", "Express.js", "Django", "RESTful APIs"] },
-    //     { databases: ["MSSQL", "MongoDB"] },
-    //     { dataScience: ["Pandas", "GeoPandas", "Matplotlib"] },
-    //     { tools: ["Docker", "GitHub", "Ubuntu", "Vite", "Regex", "CI/CD Pipelines"] },
-    //     { testing: ["Vitest", "Jest"] },
-    //     { others: ["OOP", "JWT", "Socket.io", "Postman", "Mongoose(ODM)"] }
-    // ]
+    // const programmingLangs: string[] = ["VB.NET", "TypeScript", "JavaScript", "Python"]
+    // const frontend: string[] = ["React", "React Native", "TailwindCSS", "Context API", "Redux", "Redux Persist"]
+    // const backend: string[] = ["Node.js", "Express.js", "Django", "RESTful APIs"]
+    // const databases: string[] = ["MSSQL", "MongoDB"]
+    // const dataScience: string[] = ["Pandas", "GeoPandas", "Matplotlib"]
+    // const tools: string[] = ["Docker", "GitHub", "Ubuntu", "Vite", "Regex", "CI/CD Pipelines"]
+    // const testing: string[] = ["Vitest", "Jest"]
+    // const others: string[] = ["OOP", "JWT", "Socket.io", "Postman", "Mongoose(ODM)"]
 
     return (
         <Box id="resume" className='resume'>
