@@ -25,7 +25,7 @@ export default function Resume({ isDesktop, isTablet }: ResumeProps): JSX.Elemen
     // const others: string[] = ["OOP", "JWT", "Socket.io", "Postman", "Mongoose(ODM)"]
 
     return (
-        <Box id="resume" className='resume'>
+        <Box id="resume" className='resume pb-10'>
             <Box sx={{
                 color: 'white',
                 fontSize: isDesktop ? '2.5vw' : isTablet ? '4.5vw' : '5.5vw',
@@ -38,7 +38,7 @@ export default function Resume({ isDesktop, isTablet }: ResumeProps): JSX.Elemen
             <Box className={'relative max-w-6xl mx-auto'} sx={{ display: 'block', width: '100%' }}>
                 {experiences.map((elem, index) => {
                     return (
-                        <Box key={index} sx={{ display: 'flex', alignItems: 'center', mb: '10vh' }}>
+                        <Box className="animation" key={index} sx={{ display: 'flex', alignItems: 'center', mb: '10vh' }}>
                             {(isDesktop || isTablet) && <Box className={'mr-4'} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <FiberSmartRecordIcon />
                             </Box>}
@@ -56,6 +56,8 @@ export default function Resume({ isDesktop, isTablet }: ResumeProps): JSX.Elemen
                     )
                 })}
             </Box>
+            {/* <div className="overlay top">inset start 50%</div> */}
+            {/* <div className="overlay bottom">inset end 10%</div> */}
         </Box>
     )
 }

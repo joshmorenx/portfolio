@@ -308,3 +308,63 @@ html {
     align-content: center;
     justify-content: center;
 }
+
+.content {
+    width: 75%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.subject-container {
+    border: 2px dashed black;
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* 
+.overlay {
+    position: fixed;
+    width: 100%;
+    background-color: #f5deb3aa;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: red;
+    justify-content: flex-end;
+}
+
+.top {
+    top: 0;
+    height: 244px;
+    align-items: end;
+}
+
+.bottom {
+    top: 432px;
+    height: 48px;
+} */
+
+.animation {
+    animation-timeline: view(block 95% 10%);
+
+    animation-name: grow;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes grow {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
