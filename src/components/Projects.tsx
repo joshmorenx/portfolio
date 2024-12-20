@@ -14,11 +14,11 @@ export default function Project({ isDesktop, isTablet }: ProjectProps): JSX.Elem
     const touchEndX = useRef<number>(0);
 
     const images = [
-        { source: asset, description: "description 1", repository: "https://github.com/joshmorenx/nodeNetwork" },
-        { source: "https://flowbite.com/docs/images/carousel/carousel-2.svg", description: "description 2", repository: "https://github.com/flowbite/flowbite" },
-        { source: "https://flowbite.com/docs/images/carousel/carousel-3.svg", description: "description 3", repository: "https://github.com/flowbite/flowbite" },
-        { source: "https://flowbite.com/docs/images/carousel/carousel-4.svg", description: "description 4", repository: "https://github.com/flowbite/flowbite" },
-        { source: "https://flowbite.com/docs/images/carousel/carousel-5.svg", description: "description 5", repository: "https://github.com/flowbite/flowbite" },
+        { source: asset, title: "nodeNetwork", description: "an open-source social media platform, developed using the MERN stack.", repository: "https://github.com/joshmorenx/nodeNetwork" },
+        // { source: "https://flowbite.com/docs/images/carousel/carousel-2.svg", title: "title 2", description: "description 2", repository: "https://github.com/flowbite/flowbite" },
+        // { source: "https://flowbite.com/docs/images/carousel/carousel-3.svg", title: "title 3", description: "description 3", repository: "https://github.com/flowbite/flowbite" },
+        // { source: "https://flowbite.com/docs/images/carousel/carousel-4.svg", title: "title 4", description: "description 4", repository: "https://github.com/flowbite/flowbite" },
+        // { source: "https://flowbite.com/docs/images/carousel/carousel-5.svg", title: "title 5", description: "description 5", repository: "https://github.com/flowbite/flowbite" },
     ];
 
     const handleTouchStart = (e: TouchEvent) => {
@@ -66,6 +66,7 @@ export default function Project({ isDesktop, isTablet }: ProjectProps): JSX.Elem
 
             <Box className="relative max-w-4xl mx-auto px-4">
                 <Box
+                    sx={{ boxShadow: '0 0 10px 0 rgba(255, 255, 255, 0.5)' }}
                     className="relative overflow-hidden rounded-lg"
                     onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}
@@ -87,6 +88,9 @@ export default function Project({ isDesktop, isTablet }: ProjectProps): JSX.Elem
                                     className="w-full h-[400px] object-cover"
                                     onClick={() => window.open(img.repository, '_blank')}
                                 />
+                                <Box className="pt-4 pr-4 pl-4 font-bold text-3xl text-white bg-gray-800">
+                                    {img.title}
+                                </Box>
                                 <Box className="pt-4 pr-4 pl-4 pb-10 text-white bg-gray-800">
                                     {img.description}
                                 </Box>
