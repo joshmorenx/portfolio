@@ -64,7 +64,7 @@ export default function Project({ isDesktop, isTablet }: ProjectProps): JSX.Elem
                 <h1>Projects I've Worked On</h1>
             </Box>
 
-            <Box className="relative max-w-4xl mx-auto px-4">
+            <Box className="animation relative max-w-4xl mx-auto px-4">
                 <Box
                     sx={{ boxShadow: '0 0 10px 0 rgba(255, 255, 255, 0.5)' }}
                     className="relative overflow-hidden rounded-lg"

@@ -383,11 +383,53 @@ p {
     transform: translate(-50%, -50%);
 }
 
+.each-experience {
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.each-experience:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .each-skill {
     width: 90%;
     justify-items: center;
-    border: 1px solid white;
     box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
     border-radius: 0.5rem;
     margin: 0.5rem;
+    padding-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.each-skill:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* sx={{ fontSize: isDesktop ? '0.8vw' : isTablet ? '1vw' : '2vw', borderRadius: '0.2rem', width: '80%', mb: '0.2rem', backgroundColor: 'gray' }} */
+
+.each-skill-name {
+    border-radius: 0.2rem;
+    width: 80%;
+    margin-bottom: 0.5rem !important;
+    background-color: gray;
+}
+
+.each-skill-name:hover {
+    background-color: darkgray;
+    cursor: default;
+}
+
+.each-contact {
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    padding: 1.5rem;
+}
+
+.each-contact:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
