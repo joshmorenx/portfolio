@@ -2,13 +2,9 @@ import { Box } from "@mui/material";
 import { useState, useRef, TouchEvent } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import asset from '../assets/376301017-7b50f845-33ee-41c8-85d2-c9d33e5403f9.png'
+import { ScreenSizeProps } from "../interfaces/index";
 
-interface ProjectProps {
-    isDesktop: boolean;
-    isTablet: boolean;
-}
-
-export default function Project({ isDesktop, isTablet }: ProjectProps): JSX.Element {
+export default function Project({ isDesktop, isTablet }: ScreenSizeProps): JSX.Element {
     const [currentSlide, setCurrentSlide] = useState(0);
     const touchStartX = useRef<number>(0);
     const touchEndX = useRef<number>(0);

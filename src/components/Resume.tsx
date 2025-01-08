@@ -1,12 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import FiberSmartRecordIcon from '@mui/icons-material/FiberSmartRecord';
+import { ScreenSizeProps } from '../interfaces/index';
 
-interface ResumeProps {
-    isDesktop: boolean;
-    isTablet: boolean;
-}
-
-export default function Resume({ isDesktop, isTablet }: ResumeProps): JSX.Element {
+export default function Resume({ isDesktop, isTablet }: ScreenSizeProps): JSX.Element {
     // planned to implement using this object arrays
 
     const experiences = [

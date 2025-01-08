@@ -2,13 +2,9 @@ import { Box, Typography } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GithubIcon from '@mui/icons-material/GitHub';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { ScreenSizeProps } from '../interfaces/index';
 
-interface ContactProps {
-    isDesktop: boolean;
-    isTablet: boolean;
-}
-
-export default function Contact({ isDesktop, isTablet }: ContactProps): JSX.Element {
+export default function Contact({ isDesktop, isTablet }: ScreenSizeProps): JSX.Element {
     return (
         <Box id={"contact"} className={"contact"}>
             <Box sx={{

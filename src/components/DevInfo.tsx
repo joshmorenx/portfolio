@@ -1,13 +1,9 @@
 import { Box/*, Button*/ } from "@mui/material"
 import devImg from '../assets/profile_image.png'
 import Typewriter from 'typewriter-effect';
+import { ScreenSizeProps } from '../interfaces/index';
 
-interface DevInfoProps {
-    isDesktop: boolean;
-    isTablet: boolean;
-}
-
-export default function DevInfo({ isDesktop, isTablet }: DevInfoProps): JSX.Element {
+export default function DevInfo({ isDesktop, isTablet }: ScreenSizeProps): JSX.Element {
     return (
         <Box id="dev-info" className={isDesktop ? "dev-info" : isTablet ? "dev-info-tablet" : "dev-info-mobile"}>
             <Box className={(isDesktop ? "sliced txtjustify" : isTablet ? "sliced-tablet" : "sliced-mobile")}>
