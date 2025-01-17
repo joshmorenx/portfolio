@@ -326,29 +326,6 @@ p {
     margin: 0 auto;
 }
 
-/* 
-.overlay {
-    position: fixed;
-    width: 100%;
-    background-color: #f5deb3aa;
-    display: flex;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: red;
-    justify-content: flex-end;
-}
-
-.top {
-    top: 0;
-    height: 244px;
-    align-items: end;
-}
-
-.bottom {
-    top: 432px;
-    height: 48px;
-} */
-
 .animation {
     animation-timeline: view(block 95% 10%);
 
