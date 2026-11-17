@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# Joshua Aranda — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for **Joshua Aranda Emmanuel Moreno**, Full Stack Developer & Software Engineer
+based in Mérida, Yucatán. Content is driven by the resume PDF (`CV_JOSHUA_2026_APR-10-1.pdf`),
+which is also shipped as a downloadable asset on the site.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Hero** — animated typewriter role rotation, gradient portrait ring, key stats and a skill marquee.
+- **About** — focus areas, quick facts, education and language proficiency.
+- **Projects** — card grid covering the banking products (Tokens App, CEDES, SPEI Out,
+  Deposit Limit Engine) plus NodeNetwork and CitySends.
+- **Experience** — expandable timeline of every role, with per-project highlights and tech stack.
+- **Skills** — eight categorised groups of technologies.
+- **Contact** — email, GitHub, LinkedIn and WhatsApp, plus a copy-to-clipboard email action.
+- **UX** — scroll-spy navigation, reading progress bar, scroll-reveal animations, a fully
+  responsive mobile drawer and `prefers-reduced-motion` support.
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+React 18 · TypeScript · Vite · TailwindCSS · MUI (icons) · Vitest · Playwright-free CSS design system.
 
-- Configure the top-level `parserOptions` property like this:
+All copy lives in a single typed source of truth: [`src/data/portfolio.ts`](src/data/portfolio.ts).
+Update that file to change any content on the site.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting started
+
+```bash
+npm install
+npm run dev      # dev server
+npm run build    # type-check + production build
+npm run preview  # preview the production build
+npm run test     # run the Vitest suite
+npm run lint     # lint
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Deployment
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Pushing to `main` runs the GitHub Actions workflow in `.github/workflows/ci-cd.yml`, which tests,
+builds and publishes `dist/` to the `gh-pages` branch. The site is served from
+`https://joshmorenx.github.io/portfolio/` (Vite `base` is set to `/portfolio/`).

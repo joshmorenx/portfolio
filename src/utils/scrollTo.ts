@@ -1,7 +1,8 @@
 export function scrollTo(id: string) {
     const element = document.getElementById(id);
-    const offsetTop = -60
-    if (element) {
-        window.scrollTo({ top: element.offsetTop + offsetTop, behavior: 'smooth' });
-    }
+    if (!element) return;
+
+    const navHeight = 72;
+    const top = element.getBoundingClientRect().top + window.scrollY - navHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
 }

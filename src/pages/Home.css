@@ -1,0 +1,16 @@
+.page {
+    position: relative;
+    min-height: 100vh;
+}
+
+.page__progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    z-index: 200;
+    background: var(--grad-primary);
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.9);
+    transition: width 0.12s linear;
+    pointer-events: none;
+}

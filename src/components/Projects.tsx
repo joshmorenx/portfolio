@@ -1,125 +1,91 @@
-import { Box } from "@mui/material";
-import { useState, useRef, TouchEvent } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import asset from '../assets/376301017-7b50f845-33ee-41c8-85d2-c9d33e5403f9.png'
-import { ScreenSizeProps } from "../interfaces/index";
+import { stagger } from '../hooks/useScrollReveal';
+import { projects } from '../data/portfolio';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import './Projects.css';
 
-export default function Project({ isDesktop, isTablet }: ScreenSizeProps): JSX.Element {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const touchStartX = useRef<number>(0);
-    const touchEndX = useRef<number>(0);
-
-    const images = [
-        { source: asset, title: "nodeNetwork", description: "an open-source social media platform, developed using the MERN stack.", repository: "https://github.com/joshmorenx/nodeNetwork" },
-        // { source: "https://flowbite.com/docs/images/carousel/carousel-2.svg", title: "title 2", description: "description 2", repository: "https://github.com/flowbite/flowbite" },
-        // { source: "https://flowbite.com/docs/images/carousel/carousel-3.svg", title: "title 3", description: "description 3", repository: "https://github.com/flowbite/flowbite" },
-        // { source: "https://flowbite.com/docs/images/carousel/carousel-4.svg", title: "title 4", description: "description 4", repository: "https://github.com/flowbite/flowbite" },
-        // { source: "https://flowbite.com/docs/images/carousel/carousel-5.svg", title: "title 5", description: "description 5", repository: "https://github.com/flowbite/flowbite" },
-    ];
-
-    const handleTouchStart = (e: TouchEvent) => {
-        touchStartX.current = e.touches[0].clientX;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-        touchEndX.current = e.touches[0].clientX;
-    };
-
-    const handleTouchEnd = () => {
-        const swipeThreshold = 50; // minimum distance for a swipe
-        const difference = touchStartX.current - touchEndX.current;
-
-        if (Math.abs(difference) > swipeThreshold) {
-            if (difference > 0) {
-                // Swipe left
-                nextSlide();
-            } else {
-                // Swipe right
-                prevSlide();
-            }
-        }
-    };
-
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    };
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-    };
-
+export default function Projects(): JSX.Element {
     return (
-        <Box className="projects bg-gray-900 py-12" id="projects">
-            <Box sx={{
-                color: 'white',
-                fontSize: isDesktop ? '2.5vw' : isTablet ? '4.5vw' : '5.5vw',
-                width: '100%',
-                textAlign: 'center',
-                marginBottom: '2rem'
-            }}>
-                <h1>Projects I've Worked On</h1>
-            </Box>
+        <section id="projects" className="section section--wide projects">
+            <div className="section-head reveal">
+                <span className="eyebrow">Selected work</span>
+                <h2 className="section-title">
+                    Projects I've <span className="accent">worked on</span>
+                </h2>
+                <p className="section-sub">
+                    Production banking systems, an open-source social network and a geospatial data platform —
+                    each one owned from the database query through to the shipped feature.
+                </p>
+            </div>
 
-            <Box className="animation relative max-w-4xl mx-auto px-4">
-                <Box
-                    sx={{ boxShadow: '0 0 10px 0 rgba(255, 255, 255, 0.5)' }}
-                    className="relative overflow-hidden rounded-lg"
-                    onTouchStart={handleTouchStart}
-                    onTouchMove={handleTouchMove}
-                    onTouchEnd={handleTouchEnd}
-                >
-                    <Box
-                        className="flex transition-transform duration-500 ease-out"
-                        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                    >
-                        {images.map((img, index) => (
-                            <Box
-                                key={index}
-                                className="min-w-full"
-                            >
-                                <img
-                                    src={img.source}
-                                    style={{ objectFit: 'cover', cursor: 'pointer' }}
-                                    alt={`Slide ${index + 1}`}
-                                    className="w-full h-[400px] object-cover"
-                                    onClick={() => window.open(img.repository, '_blank')}
-                                />
-                                <Box className="pt-4 pr-4 pl-4 font-bold text-3xl text-white bg-gray-800">
-                                    {img.title}
-                                </Box>
-                                <Box className="pt-4 pr-4 pl-4 pb-10 text-white bg-gray-800">
-                                    {img.description}
-                                </Box>
-                            </Box>
-                        ))}
-                    </Box>
-
-                    {/* Navigation Buttons */}
-                    <button
-                        onClick={prevSlide}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-colors"
-                    >
-                        <ChevronLeft size={24} />
-                    </button>
-                    <button
-                        onClick={nextSlide}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-colors"
-                    >
-                        <ChevronRight size={24} />
-                    </button>
-
-                    {/* Dots Indicator */}
-                    <Box className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                        {images.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setCurrentSlide(index)}
-                                className={`w-2 h-2 rounded-full transition-colors ${currentSlide === index ? 'bg-white' : 'bg-white/50'}`}
+            <div className="projects__grid">
+                {projects.map((project, i) => {
+                    const Body = (
+                        <>
+                            <span
+                                className="projects__glow"
+                                style={{ background: `radial-gradient(circle, ${project.accent}55, transparent 70%)` }}
                             />
-                        ))}
-                    </Box>
-                </Box>
-            </Box>
-        </Box>
+                            <div className="projects__head">
+                                <span className="projects__badge" style={{ borderColor: `${project.accent}66`, color: project.accent }}>
+                                    {project.badge}
+                                </span>
+                                <span className="projects__number">0{i + 1}</span>
+                            </div>
+
+                            <h3 className="projects__title">{project.title}</h3>
+                            <p className="projects__subtitle" style={{ color: project.accent }}>{project.subtitle}</p>
+                            <p className="projects__desc">{project.description}</p>
+
+                            <ul className="projects__highlights">
+                                {project.highlights.map((point) => (
+                                    <li key={point}>
+                                        <span className="projects__bullet" style={{ background: project.accent }} />
+                                        {point}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <div className="projects__footer">
+                                <div className="projects__stack">
+                                    {project.stack.map((tech) => (
+                                        <span className="chip" key={tech}>{tech}</span>
+                                    ))}
+                                </div>
+                                {project.href && (
+                                    <span className="projects__link">
+                                        <GitHubIcon sx={{ fontSize: 16 }} />
+                                        {project.linkLabel}
+                                        <ArrowOutwardIcon sx={{ fontSize: 14 }} />
+                                    </span>
+                                )}
+                            </div>
+                        </>
+                    );
+
+                    const style = {
+                        transitionDelay: `${stagger(i, 80)}ms`,
+                        ['--accent' as string]: project.accent
+                    } as React.CSSProperties;
+
+                    return project.href ? (
+                        <a
+                            className="glass glass--hover projects__card reveal"
+                            key={project.title}
+                            style={style}
+                            href={project.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {Body}
+                        </a>
+                    ) : (
+                        <article className="glass glass--hover projects__card reveal" key={project.title} style={style}>
+                            {Body}
+                        </article>
+                    );
+                })}
+            </div>
+        </section>
     );
 }

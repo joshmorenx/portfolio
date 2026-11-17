@@ -1,0 +1,293 @@
+.experience__timeline {
+    display: grid;
+    gap: 18px;
+}
+
+.experience__item {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    gap: 4px;
+}
+
+/* Rail */
+.experience__rail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 26px;
+}
+
+.experience__node {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    color: var(--text-muted);
+    background: #0d1020;
+    border: 1px solid var(--border-bright);
+    transition: all 0.4s var(--ease);
+}
+
+.experience__node.is-current {
+    color: #0b0714;
+    background: var(--grad-primary);
+    border-color: transparent;
+    box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.15), 0 0 24px rgba(139, 92, 246, 0.8);
+}
+
+.experience__item.is-open .experience__node {
+    color: #fff;
+    border-color: rgba(165, 180, 252, 0.7);
+    background: rgba(99, 102, 241, 0.35);
+}
+
+.experience__item.is-open .experience__node.is-current {
+    color: #0b0714;
+}
+
+.experience__line {
+    flex: 1;
+    width: 1px;
+    margin-top: 8px;
+    background: linear-gradient(180deg, rgba(165, 180, 252, 0.4), rgba(255, 255, 255, 0.04));
+}
+
+.experience__item:last-child .experience__line {
+    display: none;
+}
+
+/* Card */
+.experience__card {
+    padding: 22px 26px 24px;
+}
+
+.experience__toggle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.experience__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.experience__meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 8px;
+}
+
+.experience__company {
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.experience__now {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6ee7b7;
+    padding: 3px 8px;
+    border-radius: 5px;
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.experience__period {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+
+.experience__role {
+    font-size: clamp(1.08rem, 1.7vw, 1.32rem);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.015em;
+}
+
+.experience__place {
+    margin-top: 5px;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+}
+
+.experience__side {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.experience__date {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #c7d2fe;
+    white-space: nowrap;
+    padding: 5px 11px;
+    border-radius: 7px;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(129, 140, 248, 0.24);
+}
+
+.experience__chevron {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s var(--ease), color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.experience__toggle:hover .experience__chevron {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.experience__chevron.is-open {
+    transform: rotate(180deg);
+    color: #fff;
+    background: rgba(99, 102, 241, 0.3);
+}
+
+.experience__summary {
+    margin-top: 12px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 82ch;
+}
+
+/* Collapsible details — single-column grid so the 0fr→1fr row animation works.
+   Children must never carry vertical margins (they would create extra grid rows). */
+.experience__details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 0fr;
+    opacity: 0;
+    overflow: hidden;
+    transition: grid-template-rows 0.5s var(--ease), opacity 0.4s var(--ease);
+}
+
+.experience__details > * {
+    min-height: 0;
+    margin: 0;
+}
+
+.experience__item.is-open .experience__details {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+/* Spacing lives on an inner wrapper revealed with the grid row. */
+.experience__inner {
+    display: grid;
+    gap: 16px;
+    padding-top: 4px;
+}
+
+.experience__highlights {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.experience__highlights li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.87rem;
+    line-height: 1.62;
+}
+
+.experience__highlights li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    transform: rotate(45deg);
+}
+
+.experience__hi-title {
+    display: block;
+    color: #e8e9f5;
+    font-weight: 600;
+}
+
+.experience__hi-body {
+    display: block;
+    margin-top: 2px;
+    color: var(--text-muted);
+}
+
+.experience__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 16px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.experience__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 720px) {
+    .experience__item {
+        grid-template-columns: 1fr;
+    }
+
+    .experience__rail {
+        display: none;
+    }
+
+    .experience__card {
+        padding: 20px 20px 22px;
+    }
+
+    .experience__top {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .experience__side {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
