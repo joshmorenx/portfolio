@@ -5,8 +5,10 @@ import DownloadIcon from '@mui/icons-material/Download';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
+import VerifiedIcon from '@mui/icons-material/Verified';
 import profileImg from '../assets/profile_image.png';
 import { marqueeSkills, profile, stats } from '../data/portfolio';
+import { certifications } from '../data/certifications';
 import { scrollTo } from '../utils/scrollTo';
 import './Hero.css';
 
@@ -45,7 +47,7 @@ export default function Hero(): JSX.Element {
 
             <div className="hero__inner">
                 <div className="hero__copy">
-                    <span className="eyebrow">Available for opportunities</span>
+                    <span className="eyebrow">open to work · Mérida, MX</span>
 
                     <h1 className="hero__title">
                         <span className="hero__greeting">Hi, I'm {profile.firstName}</span>
@@ -60,7 +62,23 @@ export default function Hero(): JSX.Element {
                         <span className="hero__caret" aria-hidden="true" />
                     </div>
 
-                    <p className="hero__tagline">{profile.tagline}</p>
+                    <p className="hero__tagline">
+                        I build <span className="marked">serverless banking systems</span>, real-time
+                        platforms and data-driven tools.
+                    </p>
+
+                    <a
+                        className="hero__cert"
+                        href={certifications[0].verifyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <VerifiedIcon sx={{ fontSize: 16 }} />
+                        <span>
+                            <strong>{certifications[0].name}</strong>
+                            <span className="hero__cert-src">verified on Credly</span>
+                        </span>
+                    </a>
 
                     <div className="hero__meta">
                         <span><PlaceIcon sx={{ fontSize: 17 }} />{profile.location}</span>

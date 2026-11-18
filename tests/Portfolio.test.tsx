@@ -5,6 +5,7 @@ import { render, screen } from '@testing-library/react';
 import Hero from '../src/components/Hero';
 import Contact from '../src/components/Contact';
 import { experiences, profile, projects, skillGroups } from '../src/data/portfolio';
+import { awsServices, certifications } from '../src/data/certifications';
 
 describe('portfolio data', () => {
     test('exposes the profile details from the resume', () => {
@@ -25,7 +26,18 @@ describe('portfolio data', () => {
         const titles = projects.map((p) => p.title);
         expect(titles).toContain('NodeNetwork');
         expect(titles).toContain('CEDES');
-        expect(skillGroups.length).toBe(8);
+        // AWS leads the skill groups now that it's certified
+        expect(skillGroups[0].title).toBe('AWS & Cloud');
+        expect(skillGroups.length).toBeGreaterThanOrEqual(8);
+    });
+
+    test('lists the AWS Cloud Practitioner certification', () => {
+        expect(certifications).toHaveLength(1);
+        const [cert] = certifications;
+        expect(cert.name).toBe('AWS Certified Cloud Practitioner');
+        expect(cert.level).toBe('Foundational');
+        expect(cert.verifyUrl).toContain('credly.com/badges/7ea15458-1078-4eaa-8aee-2c618ac1c526');
+        expect(awsServices.map((s) => s.name)).toContain('Lambda');
     });
 });
 

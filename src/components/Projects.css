@@ -64,7 +64,7 @@
 .projects__title {
     font-size: 1.42rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text);
     letter-spacing: -0.02em;
 }
 
@@ -94,7 +94,7 @@
     position: relative;
     display: flex;
     gap: 10px;
-    color: #b8bdd6;
+    color: #b3a99c;
     font-size: 0.84rem;
     line-height: 1.55;
 }
@@ -126,7 +126,7 @@
     margin-top: 16px;
     font-size: 0.82rem;
     font-weight: 600;
-    color: var(--accent, #a5b4fc);
+    color: var(--accent, #f2a65a);
     transition: gap 0.3s var(--ease);
 }
 

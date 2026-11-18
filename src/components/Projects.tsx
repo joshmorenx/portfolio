@@ -8,13 +8,13 @@ export default function Projects(): JSX.Element {
     return (
         <section id="projects" className="section section--wide projects">
             <div className="section-head reveal">
-                <span className="eyebrow">Selected work</span>
+                <span className="eyebrow">projects</span>
                 <h2 className="section-title">
                     Projects I've <span className="accent">worked on</span>
                 </h2>
                 <p className="section-sub">
-                    Production banking systems, an open-source social network and a geospatial data platform —
-                    each one owned from the database query through to the shipped feature.
+                    A few things I've built or helped ship — banking systems at Dondé, an open-source social
+                    network, and a geospatial tool from my time at CentroGeo.
                 </p>
             </div>
 

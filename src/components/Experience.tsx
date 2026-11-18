@@ -12,13 +12,13 @@ export default function Experience(): JSX.Element {
     return (
         <section id="experience" className="section experience">
             <div className="section-head reveal">
-                <span className="eyebrow">Career</span>
+                <span className="eyebrow">experience</span>
                 <h2 className="section-title">
                     Where I've <span className="accent">built things</span>
                 </h2>
                 <p className="section-sub">
-                    Five years across consulting, product engineering and open source — from VB.NET desktop
-                    tooling to serverless banking infrastructure on AWS.
+                    Five years across a consulting gig, an open-source project, a studio and an internship —
+                    from VB.NET desktop tooling to serverless banking on AWS.
                 </p>
             </div>
 

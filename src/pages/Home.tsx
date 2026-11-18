@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from '../components/Projects';
 import Experience from '../components/Experience';
+import Certifications from '../components/Certifications';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -36,6 +37,7 @@ export default function Home(): JSX.Element {
                 <About />
                 <Projects />
                 <Experience />
+                <Certifications />
                 <Skills />
                 <Contact />
             </main>

@@ -36,13 +36,13 @@
     color: #0b0714;
     background: var(--grad-primary);
     border-color: transparent;
-    box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.15), 0 0 24px rgba(139, 92, 246, 0.8);
+    box-shadow: 0 0 0 5px rgba(242, 166, 90, 0.14), 0 0 24px rgba(242, 166, 90, 0.55);
 }
 
 .experience__item.is-open .experience__node {
-    color: #fff;
-    border-color: rgba(165, 180, 252, 0.7);
-    background: rgba(99, 102, 241, 0.35);
+    color: var(--text);
+    border-color: rgba(242, 166, 90, 0.55);
+    background: rgba(242, 166, 90, 0.16);
 }
 
 .experience__item.is-open .experience__node.is-current {
@@ -53,7 +53,7 @@
     flex: 1;
     width: 1px;
     margin-top: 8px;
-    background: linear-gradient(180deg, rgba(165, 180, 252, 0.4), rgba(255, 255, 255, 0.04));
+    background: linear-gradient(180deg, rgba(242, 166, 90, 0.3), rgba(255, 255, 255, 0.04));
 }
 
 .experience__item:last-child .experience__line {
@@ -111,11 +111,11 @@
     font-size: 0.62rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #6ee7b7;
+    color: #8fbf8f;
     padding: 3px 8px;
     border-radius: 5px;
-    background: rgba(16, 185, 129, 0.14);
-    border: 1px solid rgba(16, 185, 129, 0.35);
+    background: rgba(143, 191, 143, 0.14);
+    border: 1px solid rgba(143, 191, 143, 0.35);
 }
 
 .experience__period {
@@ -129,7 +129,7 @@
 .experience__role {
     font-size: clamp(1.08rem, 1.7vw, 1.32rem);
     font-weight: 600;
-    color: #fff;
+    color: var(--text);
     letter-spacing: -0.015em;
 }
 
@@ -149,12 +149,12 @@
 .experience__date {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: #c7d2fe;
+    color: #e8c9a0;
     white-space: nowrap;
     padding: 5px 11px;
     border-radius: 7px;
-    background: rgba(99, 102, 241, 0.12);
-    border: 1px solid rgba(129, 140, 248, 0.24);
+    background: rgba(242, 166, 90, 0.09);
+    border: 1px solid rgba(242, 166, 90, 0.22);
 }
 
 .experience__chevron {
@@ -169,14 +169,14 @@
 }
 
 .experience__toggle:hover .experience__chevron {
-    color: #fff;
+    color: var(--text);
     background: rgba(255, 255, 255, 0.1);
 }
 
 .experience__chevron.is-open {
     transform: rotate(180deg);
-    color: #fff;
-    background: rgba(99, 102, 241, 0.3);
+    color: var(--text);
+    background: rgba(242, 166, 90, 0.16);
 }
 
 .experience__summary {
@@ -238,13 +238,13 @@
     width: 6px;
     height: 6px;
     border-radius: 2px;
-    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    background: linear-gradient(135deg, #f2a65a, #c96f4a);
     transform: rotate(45deg);
 }
 
 .experience__hi-title {
     display: block;
-    color: #e8e9f5;
+    color: #f6f1e9;
     font-weight: 600;
 }
 

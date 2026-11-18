@@ -1,44 +1,51 @@
 /* ============================================================
-   Joshua Aranda — Portfolio design system
-   Dark aurora · glassmorphism · gradient accents
+   Joshua Aranda — Portfolio
+   Warm ink dark · paper accents · hand-set typography
+   Intentionally asymmetric and slightly imperfect: not every
+   card is the same, not every section is centred.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-    --bg: #05060c;
-    --bg-soft: #0a0c17;
-    --surface: rgba(255, 255, 255, 0.04);
-    --surface-strong: rgba(255, 255, 255, 0.07);
-    --border: rgba(255, 255, 255, 0.09);
-    --border-bright: rgba(255, 255, 255, 0.18);
-    --text: #f4f5fb;
-    --text-muted: #a3a8c0;
-    --text-dim: #6b7291;
+    /* Warm charcoal rather than pure black — reads like printed ink */
+    --bg: #0d0b09;
+    --bg-soft: #14110e;
+    --surface: rgba(255, 248, 240, 0.032);
+    --surface-strong: rgba(255, 248, 240, 0.06);
+    --border: rgba(255, 241, 224, 0.10);
+    --border-bright: rgba(255, 241, 224, 0.2);
 
-    --indigo: #6366f1;
-    --violet: #a855f7;
-    --cyan: #22d3ee;
-    --emerald: #10b981;
-    --amber: #f59e0b;
-    --pink: #ec4899;
+    --text: #f6f1e9;
+    --text-muted: #b3a99c;
+    --text-dim: #7d7367;
 
-    --grad-primary: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #22d3ee 100%);
-    --grad-warm: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
-    --grad-text: linear-gradient(110deg, #ffffff 10%, #c4b5fd 45%, #67e8f9 90%);
+    /* Hand-picked palette: ink denim, warm amber, terminals green */
+    --ink: #6b8cff;
+    --denim: #4a6bd6;
+    --amber: #f2a65a;
+    --amber-deep: #d97e34;
+    --sage: #8fbf8f;
+    --terminal: #7ee787;
+    --clay: #c96f4a;
+    --plum: #a17bc7;
 
-    --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    --grad-primary: linear-gradient(135deg, #4a6bd6 0%, #6b8cff 100%);
+    --grad-warm: linear-gradient(135deg, #f2a65a 0%, #c96f4a 100%);
+    --grad-text: linear-gradient(100deg, #f6f1e9 20%, #f2c79a 90%);
+
+    --font-display: 'Fraunces', 'Georgia', serif;
     --font-body: 'Inter', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 
-    --radius-sm: 10px;
-    --radius: 18px;
-    --radius-lg: 28px;
+    --radius-sm: 6px;
+    --radius: 10px;
+    --radius-lg: 14px;
 
-    --shadow-soft: 0 18px 50px -20px rgba(0, 0, 0, 0.9);
-    --shadow-glow: 0 0 60px -12px rgba(99, 102, 241, 0.55);
+    --shadow-soft: 0 22px 50px -28px rgba(0, 0, 0, 0.95);
+    --shadow-glow: 0 0 50px -18px rgba(242, 166, 90, 0.5);
 
-    --nav-h: 72px;
+    --nav-h: 70px;
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -65,32 +72,28 @@ body {
     overflow-x: hidden;
 }
 
-/* Ambient aurora backdrop shared by every section */
+/* Single warm wash in the top-left, like a lamp off to one side.
+   Deliberately off-centre — a perfectly balanced glow reads as template. */
 body::before {
     content: '';
     position: fixed;
     inset: 0;
     z-index: -2;
     background:
-        radial-gradient(ellipse 60% 50% at 15% 0%, rgba(99, 102, 241, 0.22), transparent 60%),
-        radial-gradient(ellipse 50% 45% at 85% 15%, rgba(168, 85, 247, 0.18), transparent 60%),
-        radial-gradient(ellipse 55% 45% at 50% 100%, rgba(34, 211, 238, 0.12), transparent 65%),
+        radial-gradient(ellipse 70% 55% at 8% -10%, rgba(242, 166, 90, 0.14), transparent 62%),
+        radial-gradient(ellipse 55% 50% at 96% 82%, rgba(74, 107, 214, 0.10), transparent 65%),
         var(--bg);
 }
 
-/* Subtle grid texture */
+/* Fine paper grain — breaks up the flat digital background */
 body::after {
     content: '';
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse 75% 60% at 50% 30%, #000 20%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 30%, #000 20%, transparent 80%);
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,7 +114,7 @@ a {
 }
 
 ::selection {
-    background: rgba(168, 85, 247, 0.35);
+    background: rgba(242, 166, 90, 0.3);
     color: #fff;
 }
 
@@ -125,13 +128,13 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #6366f1, #a855f7);
+    background: #3a332c;
     border-radius: 10px;
     border: 2px solid var(--bg);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #818cf8, #c084fc);
+    background: #4e4439;
 }
 
 /* ============================================================
@@ -161,86 +164,80 @@ a {
     text-align: center;
 }
 
+/* Eyebrow: a plain mono label with a leading slash, not a pill badge */
 .eyebrow {
     display: inline-flex;
-    align-items: center;
-    gap: 9px;
+    align-items: baseline;
+    gap: 8px;
     font-family: var(--font-mono);
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #a5b4fc;
-    padding: 7px 15px;
-    border-radius: 999px;
-    border: 1px solid rgba(129, 140, 248, 0.28);
-    background: rgba(99, 102, 241, 0.1);
-    backdrop-filter: blur(10px);
-    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    color: var(--amber);
+    margin-bottom: 14px;
 }
 
 .eyebrow::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--cyan);
-    box-shadow: 0 0 10px var(--cyan);
-    animation: pulseDot 2.4s ease-in-out infinite;
+    content: '//';
+    color: var(--text-dim);
+    letter-spacing: -0.05em;
 }
 
 .section-title {
-    font-size: clamp(1.9rem, 4.2vw, 3.1rem);
-    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.4vw, 3.15rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
     color: var(--text);
 }
 
 .section-title .accent {
-    background: var(--grad-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--amber);
+    background: none;
+    -webkit-text-fill-color: currentColor;
 }
 
 .section-sub {
     margin-top: 16px;
     color: var(--text-muted);
-    font-size: clamp(0.95rem, 1.15vw, 1.06rem);
-    line-height: 1.75;
+    font-size: clamp(0.95rem, 1.15vw, 1.04rem);
+    line-height: 1.78;
 }
 
 /* ============================================================
-   Glass card
+   Cards — warm paper panels, not frosted glass
    ============================================================ */
 
 .glass {
     position: relative;
-    background: var(--surface);
+    background: #16130f;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    transition: transform 0.45s var(--ease), border-color 0.45s var(--ease),
-        background 0.45s var(--ease), box-shadow 0.45s var(--ease);
+    transition: transform 0.4s var(--ease), border-color 0.4s var(--ease),
+        background 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
 
 .glass--hover:hover {
-    transform: translateY(-6px);
-    border-color: var(--border-bright);
-    background: var(--surface-strong);
-    box-shadow: var(--shadow-soft), 0 0 40px -18px rgba(129, 140, 248, 0.7);
+    transform: translateY(-4px);
+    border-color: rgba(242, 166, 90, 0.32);
+    background: #1b1712;
+    box-shadow: var(--shadow-soft);
 }
 
-/* Gradient hairline on top edge of a card */
+/* Warm rule along the top edge */
 .glass--top::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 24px;
-    right: 24px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(196, 181, 253, 0.65), transparent);
-    opacity: 0.75;
+    top: -1px;
+    left: 22px;
+    width: 54px;
+    height: 2px;
+    background: var(--amber);
+    opacity: 0.85;
 }
 
 /* ============================================================
@@ -253,75 +250,120 @@ a {
     justify-content: center;
     gap: 9px;
     font-family: var(--font-body);
-    font-size: 0.93rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    padding: 13px 24px;
-    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    letter-spacing: 0.005em;
+    padding: 12px 22px;
+    border-radius: 6px;
     border: 1px solid transparent;
     cursor: pointer;
     white-space: nowrap;
-    transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease),
-        background 0.28s var(--ease), border-color 0.28s var(--ease), color 0.28s var(--ease);
+    transition: transform 0.24s var(--ease), box-shadow 0.24s var(--ease),
+        background 0.24s var(--ease), border-color 0.24s var(--ease), color 0.24s var(--ease);
 }
 
 .btn:active {
-    transform: translateY(1px) scale(0.99);
+    transform: translateY(1px);
 }
 
 .btn--primary {
-    color: #0b0714;
-    background: var(--grad-primary);
-    background-size: 200% 200%;
-    box-shadow: 0 10px 34px -12px rgba(139, 92, 246, 0.9);
+    color: #17120c;
+    background: var(--amber);
+    border-color: var(--amber);
+    font-weight: 600;
 }
 
 .btn--primary:hover {
-    background-position: 100% 0;
-    box-shadow: 0 16px 44px -12px rgba(139, 92, 246, 1);
+    background: #ffb872;
+    border-color: #ffb872;
     transform: translateY(-2px);
+    box-shadow: 0 12px 30px -14px rgba(242, 166, 90, 0.9);
 }
 
 .btn--ghost {
     color: var(--text);
-    background: rgba(255, 255, 255, 0.045);
-    border-color: var(--border);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    border-color: rgba(255, 241, 224, 0.22);
 }
 
 .btn--ghost:hover {
-    background: rgba(255, 255, 255, 0.09);
-    border-color: var(--border-bright);
+    background: rgba(255, 241, 224, 0.06);
+    border-color: rgba(255, 241, 224, 0.4);
     transform: translateY(-2px);
 }
 
 .btn--sm {
-    padding: 9px 16px;
-    font-size: 0.82rem;
-    border-radius: 10px;
+    padding: 8px 15px;
+    font-size: 0.81rem;
+    border-radius: 5px;
 }
 
+/* Chip: flat mono tag with a soft underline, not a pill */
 .chip {
     display: inline-flex;
     align-items: center;
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 500;
+    font-size: 0.71rem;
+    font-weight: 400;
     letter-spacing: 0.01em;
-    color: #cbd5f5;
-    padding: 5px 11px;
-    border-radius: 7px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.25s var(--ease);
+    color: #c4b8a8;
+    padding: 3px 8px 4px;
+    border-radius: 3px;
+    background: rgba(255, 241, 224, 0.045);
+    border: 1px solid rgba(255, 241, 224, 0.09);
+    transition: all 0.22s var(--ease);
     white-space: nowrap;
 }
 
 .chip:hover {
-    color: #fff;
-    border-color: rgba(165, 180, 252, 0.55);
-    background: rgba(99, 102, 241, 0.18);
-    transform: translateY(-1px);
+    color: #f6f1e9;
+    border-color: rgba(242, 166, 90, 0.5);
+    background: rgba(242, 166, 90, 0.1);
+}
+
+/* ============================================================
+   Hand-made touches
+   ============================================================ */
+
+/* Marker-style underline drawn under a word — like someone
+   highlighting a line in their own notes. */
+.marked {
+    position: relative;
+    white-space: nowrap;
+}
+
+.marked::after {
+    content: '';
+    position: absolute;
+    left: -2%;
+    right: -2%;
+    bottom: -0.08em;
+    height: 0.34em;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8.5C36 3.4 74 2.2 112 4.1c30 1.5 56 3.2 86 1.4' stroke='%23f2a65a' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+/* Handwritten-feeling aside, e.g. "still shipping this" */
+.aside-note {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--amber);
+    opacity: 0.9;
+}
+
+/* Small mono meta line separated by middots */
+.meta-line {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+}
+
+/* Slightly rotated "sticker" — used sparingly */
+.tilt {
+    transform: rotate(-1.5deg);
 }
 
 /* ============================================================
@@ -335,7 +377,7 @@ a {
 
 @keyframes floatY {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-14px); }
+    50% { transform: translateY(-10px); }
 }
 
 @keyframes spinSlow {

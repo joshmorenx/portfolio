@@ -63,13 +63,14 @@ export default function Contact(): JSX.Element {
         <section id="contact" className="section contact">
             <div className="contact__panel glass glass--top reveal">
                 <div className="contact__glow" />
-                <span className="eyebrow">Get in touch</span>
+                <span className="eyebrow">contact</span>
                 <h2 className="contact__title">
                     Let's build something <span className="accent">worth shipping</span>
                 </h2>
                 <p className="contact__sub">
-                    I'm open to full stack, backend and cloud engineering roles — and always happy to talk
-                    architecture, serverless or side projects. The fastest way to reach me is email.
+                    I'm open to full stack, backend and cloud engineering roles, and always happy to talk
+                    architecture, serverless or side projects. Email is the fastest way to reach me — I try
+                    to reply the same day.
                 </p>
 
                 <div className="contact__actions">
@@ -117,6 +118,8 @@ export default function Contact(): JSX.Element {
                         );
                     })}
                 </div>
+
+                <p className="contact__signoff">— Joshua</p>
             </div>
 
             <footer className="contact__footer">
@@ -124,7 +127,7 @@ export default function Contact(): JSX.Element {
                 <span className="contact__footer-dot" />
                 <span>{profile.location}</span>
                 <span className="contact__footer-dot" />
-                <span>Built with React, TypeScript &amp; Vite</span>
+                <span>Hand-built with React, TypeScript &amp; Vite</span>
             </footer>
         </section>
     );

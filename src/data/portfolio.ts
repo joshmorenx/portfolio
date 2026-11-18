@@ -42,7 +42,7 @@ export const profile: Profile = {
     ],
     tagline: 'I build serverless banking systems, real-time platforms and data-driven tools.',
     summary:
-        'Computer Systems Engineer with 5+ years building production software. Currently on the banking section of Fundación Rafael Dondé with AWS Lambda, Step Functions, API Gateway and SQS, shipping token issuance, regulatory deposits and SPEI flows. Experienced across the MERN and .NET stacks, and comfortable owning a feature from database query to shipped UI.'
+        'Computer Systems Engineer with 5+ years building production software, and an AWS Certified Cloud Practitioner. Currently on the banking section of Fundación Rafael Dondé, shipping token issuance, regulatory deposits and SPEI flows on Lambda, Step Functions, API Gateway and SQS. Experienced across the MERN and .NET stacks, and comfortable owning a feature from database query to shipped UI.'
 };
 
 export interface Stat {
@@ -52,9 +52,9 @@ export interface Stat {
 
 export const stats: Stat[] = [
     { value: '5+', label: 'Years building software' },
-    { value: '4', label: 'Companies & projects' },
+    { value: 'AWS', label: 'Certified Cloud Practitioner' },
     { value: '6', label: 'Shipped banking products' },
-    { value: '3', label: 'Languages spoken & coded' }
+    { value: '4', label: 'Companies & projects' }
 ];
 
 export interface Experience {
@@ -219,11 +219,16 @@ export const languages: Language[] = [
 
 export interface SkillGroup {
     title: string;
-    icon: 'code' | 'layout' | 'server' | 'database' | 'chart' | 'wrench' | 'flask' | 'boxes';
+    icon: 'code' | 'layout' | 'server' | 'database' | 'chart' | 'wrench' | 'flask' | 'boxes' | 'cloud';
     skills: string[];
 }
 
 export const skillGroups: SkillGroup[] = [
+    {
+        title: 'AWS & Cloud',
+        icon: 'cloud',
+        skills: ['Lambda', 'Step Functions', 'API Gateway', 'SQS', 'Serverless Framework', 'Cloud Practitioner']
+    },
     {
         title: 'Programming Languages',
         icon: 'code',
@@ -317,7 +322,7 @@ export const projects: Project[] = [
         stack: ['MERN', 'Socket.IO', 'JWT', 'Mongoose'],
         href: 'https://github.com/joshmorenx/nodeNetwork',
         linkLabel: 'View on GitHub',
-        accent: '#6366f1',
+        accent: '#6b8cff',
         badge: 'Open Source'
     },
     {
@@ -331,7 +336,7 @@ export const projects: Project[] = [
             'Token exchange enforcing secure user approval of operations'
         ],
         stack: ['AWS Lambda', 'API Gateway', 'Node.js', 'Serverless'],
-        accent: '#06b6d4',
+        accent: '#5fb3a8',
         badge: 'Completed · Banking'
     },
     {
@@ -345,7 +350,7 @@ export const projects: Project[] = [
             'Built on the existing serverless banking platform'
         ],
         stack: ['AWS', 'Node.js', 'Serverless', 'SQS'],
-        accent: '#f59e0b',
+        accent: '#f2a65a',
         badge: 'Completed · Banking'
     },
     {
@@ -359,7 +364,7 @@ export const projects: Project[] = [
             'In progress — currently owning the migration'
         ],
         stack: ['AWS Step Functions', 'Lambda', 'SQS', 'Node.js'],
-        accent: '#a855f7',
+        accent: '#a17bc7',
         badge: 'In Progress · Banking'
     },
     {
@@ -375,7 +380,7 @@ export const projects: Project[] = [
         stack: ['Django', 'Python', 'GeoPandas', 'Shapely'],
         href: 'https://github.com/joshmorenx/CitySends',
         linkLabel: 'View on GitHub',
-        accent: '#10b981',
+        accent: '#8fbf8f',
         badge: 'CentroGeo'
     },
     {
@@ -389,7 +394,7 @@ export const projects: Project[] = [
             'Delivered and completed in production'
         ],
         stack: ['MSSQL', 'Node.js', 'AWS Lambda'],
-        accent: '#ec4899',
+        accent: '#c96f4a',
         badge: 'Completed · Banking'
     }
 ];
@@ -404,5 +409,6 @@ export const navItems: NavItem[] = [
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
+    { id: 'certifications', label: 'AWS Cert' },
     { id: 'contact', label: 'Contact' }
 ];

@@ -6,11 +6,13 @@ import InsightsIcon from '@mui/icons-material/Insights';
 import BuildIcon from '@mui/icons-material/Build';
 import ScienceIcon from '@mui/icons-material/Science';
 import WidgetsIcon from '@mui/icons-material/Widgets';
+import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 import { skillGroups, type SkillGroup } from '../data/portfolio';
 import { stagger } from '../hooks/useScrollReveal';
 import './Skills.css';
 
 const iconMap: Record<SkillGroup['icon'], JSX.Element> = {
+    cloud: <CloudQueueIcon sx={{ fontSize: 19 }} />,
     code: <CodeIcon sx={{ fontSize: 19 }} />,
     layout: <WebIcon sx={{ fontSize: 19 }} />,
     server: <DnsIcon sx={{ fontSize: 19 }} />,
@@ -24,13 +26,13 @@ const iconMap: Record<SkillGroup['icon'], JSX.Element> = {
 export default function Skills(): JSX.Element {
     return (
         <section id="skills" className="section section--wide skills">
-            <div className="section-head section-head--center reveal">
-                <span className="eyebrow">Toolbox</span>
+            <div className="section-head reveal">
+                <span className="eyebrow">skills</span>
                 <h2 className="section-title">
                     My <span className="accent">technical skills</span>
                 </h2>
                 <p className="section-sub">
-                    The stacks I reach for day to day — chosen because they ship reliable software.
+                    The tools I actually reach for — grouped roughly the way I think about a stack.
                 </p>
             </div>
 

@@ -5,56 +5,69 @@
 .contact__panel {
     position: relative;
     padding: clamp(34px, 5vw, 64px);
-    text-align: center;
+    text-align: left;
     overflow: hidden;
     isolation: isolate;
+    max-width: 880px;
+    margin: 0 auto;
 }
 
 .contact__glow {
     position: absolute;
-    top: -160px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 620px;
-    height: 380px;
+    top: -180px;
+    left: 12%;
+    width: 520px;
+    height: 340px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.32), transparent 68%);
-    filter: blur(40px);
+    background: radial-gradient(circle, rgba(242, 166, 90, 0.2), transparent 70%);
+    filter: blur(50px);
     pointer-events: none;
     z-index: -1;
 }
 
+.contact__signoff {
+    margin-top: 30px;
+    text-align: right;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.35rem;
+    color: var(--amber);
+    opacity: 0.85;
+}
+
 .contact__title {
-    font-size: clamp(1.75rem, 3.9vw, 2.9rem);
-    font-weight: 700;
-    color: #fff;
-    margin: 0 auto 16px;
-    max-width: 760px;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.9vw, 2.8rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+    color: var(--text);
+    margin: 0 0 16px;
+    max-width: 620px;
 }
 
 .contact__title .accent {
-    background: var(--grad-primary);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientShift 7s ease infinite;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--amber);
+    background: none;
+    -webkit-text-fill-color: currentColor;
 }
 
 .contact__sub {
-    max-width: 620px;
-    margin: 0 auto 32px;
+    max-width: 580px;
+    margin: 0 0 30px;
     color: var(--text-muted);
     font-size: clamp(0.93rem, 1.15vw, 1.02rem);
-    line-height: 1.75;
+    line-height: 1.78;
 }
 
 .contact__actions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 11px;
-    margin-bottom: 42px;
+    margin-bottom: 38px;
 }
 
 .contact__channels {
@@ -117,7 +130,7 @@
 }
 
 .contact__channel:hover .contact__channel-arrow {
-    color: #fff;
+    color: var(--text);
     transform: translate(2px, -2px);
 }
 
